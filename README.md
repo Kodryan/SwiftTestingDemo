@@ -46,8 +46,8 @@ struct SwiftTestingDemoTests {
 
     struct Arguments {
         @Test(arguments: [1,2,3])
-        func testLimitedFreeUsage(number: Int) {
-            #expect(number == 1)
+        func withArguments(argument: Int) {
+            #expect(argument == 1)
         }
 
         @Test(.serialized, arguments: [1: "1", 2: "2"])
