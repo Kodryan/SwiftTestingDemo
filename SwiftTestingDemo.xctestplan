@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "88E28872-43B8-43CC-B7C6-AAF110AEC051",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:SwiftTestingDemo.xcodeproj",
+      "identifier" : "8D2B96162D9725B400D7AE9D",
+      "name" : "SwiftTestingDemo"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:SwiftTestingDemo.xcodeproj",
+        "identifier" : "8D2B96262D9725B600D7AE9D",
+        "name" : "SwiftTestingDemoTests"
+      }
+    }
+  ],
+  "version" : 2
+}

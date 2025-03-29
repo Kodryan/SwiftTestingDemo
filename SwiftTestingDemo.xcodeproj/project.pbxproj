@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		8D6E60282D9741CC00641A89 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 8D6E60272D9741CC00641A89 /* SnapshotTesting */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		8D2B96282D9725B600D7AE9D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8D17CE1C2D97513C0027F4C2 /* SwiftTestingDemo.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = SwiftTestingDemo.xctestplan; sourceTree = "<group>"; };
 		8D2B96172D9725B400D7AE9D /* SwiftTestingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTestingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D2B96272D9725B600D7AE9D /* SwiftTestingDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftTestingDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D2B96312D9725B600D7AE9D /* SwiftTestingDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftTestingDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,11 +45,6 @@
 			path = SwiftTestingDemoTests;
 			sourceTree = "<group>";
 		};
-		8D2B96342D9725B600D7AE9D /* SwiftTestingDemoUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = SwiftTestingDemoUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D6E60282D9741CC00641A89 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,9 +76,10 @@
 		8D2B960E2D9725B400D7AE9D = {
 			isa = PBXGroup;
 			children = (
+				8D17CE1C2D97513C0027F4C2 /* SwiftTestingDemo.xctestplan */,
 				8D2B96192D9725B400D7AE9D /* SwiftTestingDemo */,
 				8D2B962A2D9725B600D7AE9D /* SwiftTestingDemoTests */,
-				8D2B96342D9725B600D7AE9D /* SwiftTestingDemoUITests */,
+				8D6E60262D9741CC00641A89 /* Frameworks */,
 				8D2B96182D9725B400D7AE9D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +92,13 @@
 				8D2B96312D9725B600D7AE9D /* SwiftTestingDemoUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8D6E60262D9741CC00641A89 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +144,7 @@
 			);
 			name = SwiftTestingDemoTests;
 			packageProductDependencies = (
+				8D6E60272D9741CC00641A89 /* SnapshotTesting */,
 			);
 			productName = SwiftTestingDemoTests;
 			productReference = 8D2B96272D9725B600D7AE9D /* SwiftTestingDemoTests.xctest */;
@@ -152,9 +162,6 @@
 			);
 			dependencies = (
 				8D2B96332D9725B600D7AE9D /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				8D2B96342D9725B600D7AE9D /* SwiftTestingDemoUITests */,
 			);
 			name = SwiftTestingDemoUITests;
 			packageProductDependencies = (
@@ -195,6 +202,9 @@
 			);
 			mainGroup = 8D2B960E2D9725B400D7AE9D;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				8D6E60252D9741A300641A89 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8D2B96182D9725B400D7AE9D /* Products */;
 			projectDirPath = "";
@@ -558,6 +568,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8D6E60252D9741A300641A89 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = exactVersion;
+				version = 1.17.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8D6E60272D9741CC00641A89 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D6E60252D9741A300641A89 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8D2B960F2D9725B400D7AE9D /* Project object */;
 }
