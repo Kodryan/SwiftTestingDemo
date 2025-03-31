@@ -67,10 +67,18 @@ struct SwiftTestingDemoTests {
         }
     }
 
-    struct Advanced {
+    class Advanced {
+        let result: Bool
+
+        init() {
+            result = Bool.random()
+        }
+
+        deinit {}
+
         @Test func withIssue() {
             withKnownIssue("flaky test", isIntermittent: true) {
-                if Bool.random() {
+                if result {
                     Issue.record()
                 }
             }
