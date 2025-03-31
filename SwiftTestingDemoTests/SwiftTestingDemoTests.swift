@@ -27,6 +27,7 @@ struct SwiftTestingDemoTests {
         #expect(foo == bar,  "This is message")
     }
 
+    @Suite("Traits tests")
     struct Traits {
         @Test(.enabled(if: true))
         func enabled() {}
@@ -54,12 +55,12 @@ struct SwiftTestingDemoTests {
             #expect(String(number) == string)
         }
 
-        @Test(arguments: zip([1,2,3], ["1", "2", "3"]))
+        @Test(arguments: zip([1 ,2, 3], ["1", "2", "3"]))
         func testWithZip(number: Int, string: String) {
             #expect(String(number) == string)
         }
 
-        @Test(arguments: [1,2,3], ["1", "2", "3"])
+        @Test(arguments: [1, 2, 3], ["1", "2", "3"])
         func testWithCartesianProduct(number: Int, string: String) {
             #expect(String(number) == string)
         }
@@ -67,10 +68,17 @@ struct SwiftTestingDemoTests {
 
     struct Advanced {
         @Test func withIssue() {
-            withKnownIssue("flaky test") {
+            withKnownIssue("flaky test", isIntermittent: true) {
                 if Bool.random() {
                     Issue.record()
                 }
+            }
+        }
+
+        @Test func confirmationExample() async {
+            await confirmation() { confirm in
+                try? await Task.sleep(for: .seconds(1))
+                confirm()
             }
         }
     }
