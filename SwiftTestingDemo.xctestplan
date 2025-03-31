@@ -18,11 +18,6 @@
   "testTargets" : [
     {
       "parallelizable" : true,
-      "selectedTags" : {
-        "tags" : [
-          ".snapshot"
-        ]
-      },
       "target" : {
         "containerPath" : "container:SwiftTestingDemo.xcodeproj",
         "identifier" : "8D2B96262D9725B600D7AE9D",

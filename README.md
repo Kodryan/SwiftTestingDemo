@@ -22,6 +22,12 @@ struct SwiftTestingDemoTests {
     }
 
     @Test func diff() {
+        struct Stub: Equatable {
+            let foo: String
+            let bar: Int
+            let baz: Int
+        }
+
         let foo = Stub(foo: "foo", bar: 0, baz: 0)
         let bar = Stub(foo: "bar", bar: 0, baz: 0)
 
@@ -90,7 +96,19 @@ struct SwiftTestingDemoTests {
                 confirm()
             }
         }
+
+        @Test func usingHelper() {
+            helperWithExpect(expected: 1, actual: 0)
+        }
     }
+}
+
+func helperWithExpect(
+    expected: Int,
+    actual: Int,
+    sourceLocation: SourceLocation = #_sourceLocation
+) {
+    #expect(expected == actual, sourceLocation: sourceLocation)
 }
 
 extension SwiftTestingDemoTests {
@@ -99,13 +117,9 @@ extension SwiftTestingDemoTests {
     }
 }
 
-struct Stub: Equatable {
-    let foo: String
-    let bar: Int
-    let baz: Int
-}
-
 extension Tag {
     @Tag static var myTag: Self
+    @Tag static var snapshot: Self
 }
+
 ```
