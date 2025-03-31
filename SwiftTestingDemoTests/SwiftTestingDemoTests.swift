@@ -106,4 +106,5 @@ struct Stub: Equatable {
 
 extension Tag {
     @Tag static var myTag: Self
+    @Tag static var snapshot: Self
 }

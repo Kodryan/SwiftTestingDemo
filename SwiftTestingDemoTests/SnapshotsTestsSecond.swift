@@ -1,15 +1,17 @@
-
 import Testing
 import SnapshotTesting
 import SwiftUI
 
-@MainActor
+
 @Suite(.snapshots(record: .never), .tags(.snapshot))
-struct SnapshotsTests {
-    @Test func snapshot() {
+struct SnapshotsTestsSecond {
+
+    @Test
+    @MainActor
+    func snapshotSecond() {
         let view = Text("Text")
             .padding()
-            .background(.blue)
+            .background(.red)
             .fixedSize()
 
         assertSnapshot(of: view, as: .image)
