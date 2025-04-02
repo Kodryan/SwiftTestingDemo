@@ -16,7 +16,7 @@ struct SwiftTestingDemoTests {
     }
 
     @Test func unwrapOptional() throws {
-        let optional: String? = "1"
+        let optional: String? = nil
         let unwrapped = try #require(optional)
         #expect(unwrapped == "1")
     }
@@ -49,6 +49,12 @@ struct SwiftTestingDemoTests {
 
         @Test("Named test")
         func withName() {}
+
+        @Test(.bug("https://example.com"), .disabled())
+        func withBug() {}
+
+        @Test(.timeLimit(.minutes(1)))
+        func withTimeLimit() {}
     }
 
     struct Arguments {
@@ -121,5 +127,4 @@ extension Tag {
     @Tag static var myTag: Self
     @Tag static var snapshot: Self
 }
-
 ```
